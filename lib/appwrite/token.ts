@@ -1,6 +1,6 @@
 import { tablesDB, ID, Query, APPWRITE_DATABASE_ID } from './core';
 import { getCurrentUser } from './auth';
-import type { ApiKeys } from '@whisperrnote_mobile/types/appwrite.d.ts';
+import type { ApiKeys } from '@/types/appwrite.d.ts';
 
 const APPWRITE_TABLE_ID_APIKEYS = process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID_APIKEYS || 'apikeys';
 

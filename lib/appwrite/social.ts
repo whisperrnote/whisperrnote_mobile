@@ -1,6 +1,6 @@
 import { tablesDB, ID, Query, APPWRITE_DATABASE_ID } from './core';
 import { getCurrentUser } from './auth';
-import type { Follows, Contacts, TokenHoldings, Wallets } from '@whisperrnote_mobile/types/appwrite.d.ts';
+import type { Follows, Contacts, TokenHoldings, Wallets } from '@/types/appwrite.d.ts';
 
 const APPWRITE_TABLE_ID_FOLLOWS = process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID_FOLLOWS || 'follows';
 const APPWRITE_TABLE_ID_CONTACTS = process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID_CONTACTS || 'contacts';
