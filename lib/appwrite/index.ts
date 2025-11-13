@@ -5,3 +5,6 @@ export * from './tags';
 export * from './comments';
 export * from './attachments';
 export * from './reactions';
+export * from './collaborators';
+export * from './activitylog';
+export * from './subscriptions';
