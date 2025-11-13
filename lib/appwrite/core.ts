@@ -1,4 +1,4 @@
-import { Client, Account, Databases, Storage, Functions, ID, Query, Permission, Role, TablesDB } from 'appwrite';
+import { Client, Account, Databases, Storage, Functions, ID, Query, Permission, Role, TablesDB, OAuthProvider } from 'appwrite';
 
 const client = new Client()
   .setEndpoint(process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT || 'https://fra.cloud.appwrite.io/v1')
@@ -47,4 +47,5 @@ export {
   Query,
   Permission,
   Role,
+  OAuthProvider,
 };

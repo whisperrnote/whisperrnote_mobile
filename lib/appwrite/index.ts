@@ -8,8 +8,6 @@ export * from './reactions';
 export * from './collaborators';
 export * from './activitylog';
 export * from './subscriptions';
-export * from './passkey';
-export * from './wallet';
 export * from './token';
 export * from './extensions';
 export * from './user-profile';
