@@ -5,7 +5,7 @@
   channel = "stable-25.05";
   # Use https://search.nixos.org/packages to find packages
   packages = [ 
-    pkgs.nodejs_20 
+    pkgs.nodejs_24
     pkgs.jdk21_headless 
     pkgs.gradle 
     pkgs.gh
