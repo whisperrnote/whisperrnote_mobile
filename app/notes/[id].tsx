@@ -21,6 +21,7 @@ export default function NoteDetailScreen() {
     if (id) {
       loadNoteData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const loadNoteData = async () => {

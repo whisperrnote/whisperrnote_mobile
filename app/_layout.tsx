@@ -4,9 +4,8 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
-import { AuthProvider } from '@/contexts/AuthContext';
+import { AuthProvider, useAuth } from '@/contexts/AuthContext';
 import { NotesProvider } from '@/contexts/NotesContext';
-import { useAuth } from '@/contexts/AuthContext';
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();

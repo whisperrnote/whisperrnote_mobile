@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { View, FlatList, TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { useAuth } from '@/contexts/AuthContext';
 import { useNotes } from '@/contexts/NotesContext';
@@ -15,7 +15,7 @@ export default function NotesScreen() {
     } else if (user) {
       fetchNotes();
     }
-  }, [user, authLoading]);
+  }, [user, authLoading, fetchNotes, router]);
 
   if (authLoading) {
     return (
