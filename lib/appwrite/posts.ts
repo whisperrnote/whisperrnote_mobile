@@ -1,6 +1,6 @@
 import { tablesDB, ID, Query, APPWRITE_DATABASE_ID } from './core';
 import { getCurrentUser } from './auth';
-import type { Posts } from '@whisperrnote_mobile/types/appwrite.d.ts';
+import type { Posts } from '@/types/appwrite.d.ts';
 
 const APPWRITE_TABLE_ID_POSTS = process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID_POSTS || 'posts';
 

@@ -1,6 +1,6 @@
 import { tablesDB, ID, Query, APPWRITE_DATABASE_ID } from './core';
 import { getCurrentUser } from './auth';
-import type { Messages, Conversations } from '@whisperrnote_mobile/types/appwrite.d.ts';
+import type { Messages, Conversations } from '@/types/appwrite.d.ts';
 
 const APPWRITE_TABLE_ID_MESSAGES = process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID_MESSAGES || 'messages';
 const APPWRITE_TABLE_ID_CONVERSATIONS = process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID_CONVERSATIONS || 'conversations';

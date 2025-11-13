@@ -1,5 +1,5 @@
 import { getCurrentUser } from './auth';
-import type { Notes } from '@whisperrnote_mobile/types/appwrite.d.ts';
+import type { Notes } from '@/types/appwrite.d.ts';
 
 export interface ShareLink {
   id: string;

@@ -1,6 +1,6 @@
 import { tablesDB, ID, Query, APPWRITE_DATABASE_ID, Permission, Role } from './core';
 import { getCurrentUser } from './auth';
-import type { Extensions } from '@whisperrnote_mobile/types/appwrite.d.ts';
+import type { Extensions } from '@/types/appwrite.d.ts';
 
 const APPWRITE_TABLE_ID_EXTENSIONS = process.env.EXPO_PUBLIC_APPWRITE_TABLE_ID_EXTENSIONS || 'extensions';
 
