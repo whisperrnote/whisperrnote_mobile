@@ -1,6 +1,6 @@
 import { storage, APPWRITE_BUCKET_PROFILE_PICTURES, ID } from './core';
 import { getCurrentUser } from './auth';
-import type { Users } from '@whisperrnote_mobile/types/appwrite.d.ts';
+import type { Users } from '@/types/appwrite.d.ts';
 import * as FileSystem from 'expo-file-system';
 import * as DocumentPicker from 'expo-document-picker';
 

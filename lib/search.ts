@@ -1,4 +1,4 @@
-import { Query, APPWRITE_DATABASE_ID, APPWRITE_TABLE_ID_NOTES, tablesDB } from './core';
+import { Query, APPWRITE_DATABASE_ID, APPWRITE_TABLE_ID_NOTES, tablesDB } from './appwrite/core';
 import type { Notes } from '@/types/appwrite';
 
 export async function searchNotes(query: string): Promise<Notes[]> {
