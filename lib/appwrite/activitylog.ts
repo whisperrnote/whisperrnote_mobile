@@ -25,7 +25,7 @@ export async function logActivity(
   return doc as unknown as ActivityLog;
 }
 
-export async function getActivityLog(limit: number = 50): Promise<ActivityLog[]> {
+export async function getUserActivityLog(limit: number = 50): Promise<ActivityLog[]> {
   const user = await getCurrentUser();
   if (!user?.$id) return [];
 

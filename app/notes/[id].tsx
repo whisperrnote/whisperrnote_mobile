@@ -39,8 +39,8 @@ export default function NoteDetailScreen() {
 
   useEffect(() => {
     if (currentNote) {
-      setTitle(currentNote.title);
-      setContent(currentNote.content);
+      setTitle(currentNote.title || '');
+      setContent(currentNote.content || '');
       setTags(currentNote.tags?.join(', ') || '');
     }
   }, [currentNote]);

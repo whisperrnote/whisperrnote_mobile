@@ -1,8 +1,8 @@
 import { tablesDB, ID, Query, APPWRITE_DATABASE_ID, APPWRITE_TABLE_ID_REACTIONS } from './core';
-import type { Reactions, TargetType } from '@/types/appwrite';
+import type { Reactions, ReactionsTargetType } from '@/types/appwrite.d.ts';
 import { getCurrentUser } from './auth';
 
-export async function addReaction(targetType: TargetType, targetId: string, emoji: string): Promise<Reactions> {
+export async function addReaction(targetType: ReactionsTargetType, targetId: string, emoji: string): Promise<Reactions> {
   const user = await getCurrentUser();
   if (!user?.$id) throw new Error('User not authenticated');
 
@@ -29,7 +29,7 @@ export async function removeReaction(reactionId: string) {
   });
 }
 
-export async function getReactionsForTarget(targetType: TargetType, targetId: string): Promise<Reactions[]> {
+export async function getReactionsForTarget(targetType: ReactionsTargetType, targetId: string): Promise<Reactions[]> {
   const res = await tablesDB.listRows({
     databaseId: APPWRITE_DATABASE_ID,
     tableId: APPWRITE_TABLE_ID_REACTIONS,

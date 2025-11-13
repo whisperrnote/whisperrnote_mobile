@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useNotes } from '@/contexts/NotesContext';
-import { Status } from '@/types/appwrite';
+import type { NotesStatus } from '@/types/appwrite.d.ts';
 
 export default function NewNoteScreen() {
   const [title, setTitle] = useState('');
@@ -33,7 +33,7 @@ export default function NewNoteScreen() {
         title,
         content,
         tags: tagArray,
-        status: Status.DRAFT,
+        status: 'draft' as NotesStatus,
         createdAt: now,
         updatedAt: now,
       });
@@ -54,13 +54,12 @@ export default function NewNoteScreen() {
         {error && <Text style={styles.error}>{error}</Text>}
 
         <TextInput
-          style={styles.input}
+          style={[styles.input, { fontSize: 18 }]}
           placeholder="Title"
           value={title}
           onChangeText={setTitle}
           placeholderTextColor="#999"
           editable={!loading}
-          fontSize={18}
         />
 
         <TextInput

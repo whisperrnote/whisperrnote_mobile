@@ -57,8 +57,8 @@ export async function exportNotesAsMarkdown(): Promise<string | null> {
 
     for (const note of notesResult.documents) {
       markdown += `## ${note.title || 'Untitled Note'}\n\n`;
-      markdown += `**Created:** ${new Date(note.createdAt).toLocaleString()}\n`;
-      markdown += `**Updated:** ${new Date(note.updatedAt).toLocaleString()}\n`;
+      markdown += `**Created:** ${new Date(note.createdAt || new Date()).toLocaleString()}\n`;
+      markdown += `**Updated:** ${new Date(note.updatedAt || new Date()).toLocaleString()}\n`;
 
       if (note.tags && note.tags.length > 0) {
         markdown += `**Tags:** ${note.tags.join(', ')}\n`;
@@ -85,8 +85,8 @@ export async function exportNotesAsCSV(): Promise<string | null> {
       const title = (note.title || '').replace(/"/g, '""');
       const content = (note.content || '').replace(/"/g, '""');
       const tags = (note.tags?.join('; ') || '').replace(/"/g, '""');
-      const createdAt = new Date(note.createdAt).toISOString();
-      const updatedAt = new Date(note.updatedAt).toISOString();
+      const createdAt = new Date(note.createdAt || new Date()).toISOString();
+      const updatedAt = new Date(note.updatedAt || new Date()).toISOString();
       const status = note.status || 'draft';
 
       csv += `"${title}","${content}","${tags}","${createdAt}","${updatedAt}","${status}"\n`;

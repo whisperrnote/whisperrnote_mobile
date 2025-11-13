@@ -177,7 +177,7 @@ export async function removeConversationParticipant(
   const conversation = await getConversation(conversationId);
   if (!conversation) throw new Error('Conversation not found');
 
-  const participantIds = (conversation.participantIds || []).filter((id) => id !== userId);
+  const participantIds = (conversation.participantIds || []).filter((id: string) => id !== userId);
 
   await tablesDB.updateRow({
     databaseId: APPWRITE_DATABASE_ID,

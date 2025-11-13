@@ -1,8 +1,8 @@
 import { tablesDB, Query, APPWRITE_DATABASE_ID, APPWRITE_TABLE_ID_SUBSCRIPTIONS } from './core';
-import type { Subscription, SubscriptionPlan } from '@/types/appwrite';
+import type { Subscriptions, SubscriptionsPlan } from '@/types/appwrite.d.ts';
 import { getCurrentUser } from './auth';
 
-export async function getSubscription(): Promise<Subscription | null> {
+export async function getSubscription(): Promise<Subscriptions | null> {
   try {
     const user = await getCurrentUser();
     if (!user?.$id) return null;
@@ -14,7 +14,7 @@ export async function getSubscription(): Promise<Subscription | null> {
     });
 
     if (res.rows.length > 0) {
-      return res.rows[0] as unknown as Subscription;
+      return res.rows[0] as unknown as Subscriptions;
     }
     return null;
   } catch (error) {
@@ -23,8 +23,8 @@ export async function getSubscription(): Promise<Subscription | null> {
   }
 }
 
-export async function checkPlanLimit(plan: SubscriptionPlan, resource: string, currentCount: number): Promise<boolean> {
-  const limits: Record<SubscriptionPlan, Record<string, number>> = {
+export async function checkPlanLimit(plan: SubscriptionsPlan, resource: string, currentCount: number): Promise<boolean> {
+  const limits: Record<SubscriptionsPlan, Record<string, number>> = {
     free: {
       notes: 50,
       collaborators: 0,
